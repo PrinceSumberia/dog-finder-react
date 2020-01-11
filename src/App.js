@@ -1,26 +1,52 @@
 import React from 'react';
-import logo from './logo.svg';
+import Nav from './Nav';
 import './App.css';
+import whiskey from './imgs/whiskey.jpg';
+import hazel from './imgs/hazel.jpg';
+import tubby from './imgs/tubby.jpg';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+	static defaultProps = {
+		dogs: [
+			{
+				name: 'Whiskey',
+				age: 5,
+				src: whiskey,
+				facts: [
+					'Whiskey loves eating popcorn.',
+					'Whiskey is a terrible guard dog.',
+					'Whiskey wants to cuddle with you!'
+				]
+			},
+			{
+				name: 'Hazel',
+				age: 3,
+				src: hazel,
+				facts: [
+					'Hazel has soooo much energy!',
+					'Hazel is highly intelligent.',
+					'Hazel loves people more than dogs.'
+				]
+			},
+			{
+				name: 'Tubby',
+				age: 4,
+				src: tubby,
+				facts: [
+					'Tubby is not the brightest dog',
+					'Tubby does not like walks or exercise.',
+					'Tubby loves eating food.'
+				]
+			}
+		]
+	};
+	render() {
+		return (
+			<div className="App">
+				<Nav />
+			</div>
+		);
+	}
 }
 
 export default App;
