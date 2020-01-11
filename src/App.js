@@ -1,9 +1,11 @@
 import React from 'react';
 import Nav from './Nav';
-import './App.css';
+import { Switch, Route } from 'react-router-dom';
+import Dogs from './Dogs';
 import whiskey from './imgs/whiskey.jpg';
 import hazel from './imgs/hazel.jpg';
 import tubby from './imgs/tubby.jpg';
+import './App.css';
 
 class App extends React.Component {
 	static defaultProps = {
@@ -44,6 +46,9 @@ class App extends React.Component {
 		return (
 			<div className="App">
 				<Nav />
+				<Switch>
+					<Route path="/dogs" render={() => <Dogs />} />
+				</Switch>
 			</div>
 		);
 	}
