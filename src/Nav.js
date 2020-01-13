@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 class Nav extends Component {
 	render() {
-		return (
-			<div>
-				<h1>This is a Navbar Component</h1>
-			</div>
-		);
+		const dog = this.props.dogs.map((dog, i) => (
+			<NavLink key={i} exact activeClassName="active-menu" to={`/dogs/${dog.name.toLowerCase()}`}>
+				{dog.name}
+			</NavLink>
+		));
+		return <div>{dog}</div>;
 	}
 }
 
