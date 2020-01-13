@@ -50,13 +50,15 @@ class App extends React.Component {
 			return <Dog {...props} dog={currentDog} />;
 		};
 		return (
-			<div className="App">
+			<div>
 				<Nav dogs={this.props.dogs} />
-				<Switch>
-					<Route exact path="/dogs" render={() => <Dogs dogs={this.props.dogs} />} />
-					<Route exact path="/dogs/:name" render={getDog} />} />
-					<Redirect to="/dogs" />
-				</Switch>
+				<div className="container">
+					<Switch>
+						<Route exact path="/dogs" render={() => <Dogs dogs={this.props.dogs} />} />
+						<Route exact path="/dogs/:name" render={getDog} />} />
+						<Redirect to="/dogs" />
+					</Switch>
+				</div>
 			</div>
 		);
 	}
